@@ -97,6 +97,10 @@ const props = {
     type: Number,
     default: 9
   },
+  nodeTextSize: {
+    type: String,
+    default: "10px"
+  },
   nodeTextDisplay: {
     type: String,
     default: 'all',
@@ -623,6 +627,12 @@ export default {
 
     drawLink () {
       return linkLayouts[this.linkLayout]
+    },
+    
+    textSize () {
+      return { 
+        font: this.nodeTextSize + " sans-serif" 
+      }
     }
   },
 
@@ -716,7 +726,6 @@ export default {
 }
 
 .treeclass .nodetree text {
-  font: 10px sans-serif;
   cursor: pointer;
 }
 
